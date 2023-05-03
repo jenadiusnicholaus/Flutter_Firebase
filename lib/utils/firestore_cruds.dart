@@ -13,8 +13,5 @@ class CollectionReferenceTo {
   }
 
   //Read
-
-  //Delete
-
-  //Change
+// add the logic for reading the user data from firestore
 }
