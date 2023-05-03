@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>254546507951-o6sscgkp4k0jedi5uknc9rebe53fk5j2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.254546507951-o6sscgkp4k0jedi5uknc9rebe53fk5j2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCdDu2_-qXm7cFXLGNC_RLHp1P8tx3Wytc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>254546507951</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.xAppa</string>
+	<key>PROJECT_ID</key>
+	<string>getcontact-b7674</string>
+	<key>STORAGE_BUCKET</key>
+	<string>getcontact-b7674.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:254546507951:ios:bc8c4f3277d1a7246b3c5a</string>
+	<key>DATABASE_URL</key>
+	<string>https://getcontact-b7674.firebaseio.com</string>
+</dict>
+</plist>

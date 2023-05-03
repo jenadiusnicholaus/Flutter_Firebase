@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "254546507951",
+    "firebase_url": "https://getcontact-b7674.firebaseio.com",
+    "project_id": "getcontact-b7674",
+    "storage_bucket": "getcontact-b7674.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254546507951:android:9dc2eb234de86da26b3c5a",
+        "android_client_info": {
+          "package_name": "com.example.x_app_a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254546507951-tis69otrv1mqt2ck0v9ui3mjbgoulog9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPyrK2K2uSVCODWP7rP7V__7eRoQqsmRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254546507951-8lafan4nk5co3g9t4i405lfku914vrb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
