@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:x_app_a/utils/firestore_cruds.dart';
+import 'package:x_app_a/screens/user_list.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -51,56 +52,55 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: const InputDecoration(hintText: 'Age'),
                     // The validator receives the text that the user has entered.
                   ),
-                  SizedBox(
-                      child: TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                          (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.focused))
-                          return Colors.red;
-                        return null; // Defer to the widget's default.
-                      }),
-                    ),
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        CollectionReferenceTo.addUser(
-                            fullName: _nameController.text,
-                            company: _companyController.text,
-                            age: _ageController.text,
-                            users: users);
+                  Row(
+                    children: [
+                      SizedBox(
+                          child: TextButton(
+                        style: ButtonStyle(
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color?>(
+                                  (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.focused))
+                              return Colors.red;
+                            return null; // Defer to the widget's default.
+                          }),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            CollectionReferenceTo.addUser(
+                                fullName: _nameController.text,
+                                company: _companyController.text,
+                                age: _ageController.text,
+                                users: users);
 
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data')),
-                        );
-                      }
-                    },
-                    child: Text('Add'),
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Processing Data')),
+                            );
+                          }
+                        },
+                        child: const Text('Add'),
+                      )),
+                      SizedBox(
+                          child: TextButton(
+                        style: ButtonStyle(
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color?>(
+                                  (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.focused))
+                              return Colors.red;
+                            return null; // Defer to the widget's default.
+                          }),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Users()));
+                        },
+                        child: const Text('user list'),
+                      )),
+                    ],
                   )
-
-                      // IconButton(
-                      //     color: Colors.blue,
-                      //     icon: const Icon(Icons.add),
-                      //     onPressed: () => () {
-                      //           // if (_formKey.currentState!.validate()) {
-                      //           CollectionReferenceTo.addUser(
-                      //               fullName: _nameController.text,
-                      //               company: _companyController.text,
-                      //               age: _ageController.text,
-                      //               users: users);
-
-                      //           ScaffoldMessenger.of(context).showSnackBar(
-                      //             const SnackBar(
-                      //                 content: Text('Processing Data')),
-                      //           );
-                      //           return true;
-                      //         }
-                      //     // ScaffoldMessenger.of(context).showSnackBar(
-                      //     //   const SnackBar(content: Text('form not valide')),
-                      //     // );
-                      //     // return false;
-                      //     // },
-                      //     ),
-                      )
                 ]),
               ),
             ),

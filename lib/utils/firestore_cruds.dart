@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class CollectionReferenceTo {
   //add entry
   static Future<void> addUser({fullName, company, age, users}) {
@@ -13,5 +15,10 @@ class CollectionReferenceTo {
   }
 
   //Read
-// add the logic for reading the user data from firestore
+  static Stream<QuerySnapshot> readUsers()  {
+    final Stream<QuerySnapshot> _usersStream =
+        FirebaseFirestore.instance.collection('users').snapshots();
+
+    return _usersStream;
+  }
 }
