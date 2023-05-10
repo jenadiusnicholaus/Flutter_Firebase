@@ -4,12 +4,14 @@ import 'package:x_app_a/screens/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:x_app_a/core/local_storage/prfs.dart';
 import 'package:x_app_a/screens/auth/sign_in.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final dynamic token = await AppLocalStorage.getdata('token');
   await Firebase.initializeApp();
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final storage = firebase_storage.FirebaseStorage.instance;
   runApp(MyApp(token: token));
 }
 
