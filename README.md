@@ -1,6 +1,6 @@
 # Flutter and Firebase
 
-IT is learning project, that include all firebase service which are , Cloud fireStore, Storage , Authenticatipon.  This is made purposely when i was teaching my flutter student at intmain bootcamp.
+It is learning project, that include all firebase service which are , Cloud fireStore, Storage , Authenticatipon.  This is made purposely when i was teaching my flutter student at intmain bootcamp.
 ## Build with
 
 - flutter

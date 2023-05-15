@@ -7,13 +7,13 @@ class FirebaseStorageCRUD {
   static Future uploadFile(photo) async {
     if (photo == null) return;
     final fileName = basename(photo!.path);
-    final destination = 'files/$fileName';
+    final destination = 'files/';
 
     try {
       final ref = firebase_storage.FirebaseStorage.instance
           .ref(destination)
-          .child('file/');
-      await ref.putFile(photo!);
+          .child('images/$fileName');
+      await ref.putFile(photo);
     } catch (e) {
       print('error occured');
     }
@@ -21,12 +21,20 @@ class FirebaseStorageCRUD {
 
   //list files
 
-  static ListFiles() async {
-    final storageRef =
-        firebase_storage.FirebaseStorage.instance.ref().child("files/uid");
-    final listResult = await storageRef.listAll();
+  static Future<List<String>> ListFiles() async {
+    final firebase_storage.ListResult storageRef = await firebase_storage
+        .FirebaseStorage.instance
+        .ref('files/')
+        .child('images/')
+        .listAll();
 
-    return listResult.items;
+    final List<firebase_storage.Reference> allFiles = storageRef.items;
+
+    final List<String> urls = await Future.wait(
+      allFiles.map((firebase_storage.Reference ref) => ref.getDownloadURL()),
+    );
+
+    return urls;
   }
   //download file
   // delete file

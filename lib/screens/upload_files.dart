@@ -52,7 +52,7 @@ class _ImageUploadsState extends State<ImageUploads> {
       appBar: AppBar(),
       body: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 32,
           ),
           Center(
@@ -98,18 +98,18 @@ class _ImageUploadsState extends State<ImageUploads> {
         builder: (BuildContext bc) {
           return SafeArea(
             child: Container(
-              child: new Wrap(
-                children: <Widget>[
-                  new ListTile(
-                      leading: new Icon(Icons.photo_library),
-                      title: new Text('Gallery'),
+              child: Wrap(
+                children: [
+                  ListTile(
+                      leading: const Icon(Icons.photo_library),
+                      title: const Text('Gallery'),
                       onTap: () {
                         imgFromGallery();
                         Navigator.of(context).pop();
                       }),
-                  new ListTile(
-                    leading: new Icon(Icons.photo_camera),
-                    title: new Text('Camera'),
+                  ListTile(
+                    leading: const  Icon(Icons.photo_camera),
+                    title: const  Text('Camera'),
                     onTap: () {
                       imgFromCamera();
                       Navigator.of(context).pop();
